@@ -1,36 +1,18 @@
 <?php
 
-$temprature = 12;
+$temprature = 45;
+$cloudy = true;
 
-
-if ($temprature >= 23) {
-    echo "Weather is normal";
+if($temprature > 0 && $temprature < 30){
+    echo "Temp is good";
 } else {
-    echo "Weather is good";
+    echo "Temp is not good";
 }
 
 echo "<br><br>";
 
-$age = 18;
-
-if ($age >= 18) {
-    echo "You can vote";
+if(!$cloudy){
+    echo "Temp is good it's cloudy";
 } else {
-    echo "You cannot vote";
+    echo "Temp is not good, it's not cloudy";
 }
-
-echo "<br><br>";
-
-$hrs = 50;
-$rate = 10;
-$weekPay = 0;
-
-if ($hrs <= 0) {
-    $weekPay = 0;
-} else if ($hrs <= 40) {
-    $weekPay = $hrs * $rate;
-} else {
-    $weekPay = ($hrs * $rate) + (($hrs - 40) * $rate);
-}
-
-echo "Your weekly payout is $weekPay $";
