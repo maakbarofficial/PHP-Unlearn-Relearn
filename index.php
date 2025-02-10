@@ -1,40 +1,41 @@
 <?php
 
-$a = 10;
-$b = 20;
-// $c = $a + $b;
-// $c = $a - $b;
-// $c = $a * $b;
-// $c = $a / $b;
-// $c = $a % $b;
-$c = $a ** $b;
+$name = "aasim";
 
-echo "<h1>$c</h1>";
+echo "<h1>".strlen($name)."</h1>";
 
 echo "<br><br>";
 
-$x = 10;
-
-echo "<br>";
-
-echo $x;
-
-echo "<br>";
-
-$x++;
-
-echo $x;
+echo str_replace("w", "A", $name);
 
 echo "<br><br>";
 
-echo $x;
+echo ucwords($name);
 
-echo "<br>";
+echo "<br><br>";
 
-$x--;
+echo strtoupper($name);
 
-echo "<br>";
+echo "<br><br>";
 
-echo $x;
+$num = "10";
+
+echo var_dump(is_int($num));
+
+echo "<br><br>";
+
+echo pi();
+
+echo "<br><br>";
+
+echo abs(-22);
+
+echo "<br><br>";
+
+echo sqrt(2);
+
+echo "<br><br>";
+
+echo round(2.27635);
 
 ?>
