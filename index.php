@@ -1,41 +1,36 @@
 <?php
 
-$name = "aasim";
+$temprature = 12;
 
-echo "<h1>".strlen($name)."</h1>";
 
-echo "<br><br>";
-
-echo str_replace("w", "A", $name);
-
-echo "<br><br>";
-
-echo ucwords($name);
+if ($temprature >= 23) {
+    echo "Weather is normal";
+} else {
+    echo "Weather is good";
+}
 
 echo "<br><br>";
 
-echo strtoupper($name);
+$age = 18;
+
+if ($age >= 18) {
+    echo "You can vote";
+} else {
+    echo "You cannot vote";
+}
 
 echo "<br><br>";
 
-$num = "10";
+$hrs = 50;
+$rate = 10;
+$weekPay = 0;
 
-echo var_dump(is_int($num));
+if ($hrs <= 0) {
+    $weekPay = 0;
+} else if ($hrs <= 40) {
+    $weekPay = $hrs * $rate;
+} else {
+    $weekPay = ($hrs * $rate) + (($hrs - 40) * $rate);
+}
 
-echo "<br><br>";
-
-echo pi();
-
-echo "<br><br>";
-
-echo abs(-22);
-
-echo "<br><br>";
-
-echo sqrt(2);
-
-echo "<br><br>";
-
-echo round(2.27635);
-
-?>
+echo "Your weekly payout is $weekPay $";
