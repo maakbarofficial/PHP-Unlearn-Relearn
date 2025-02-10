@@ -1,18 +1,21 @@
 <?php
 
-$temprature = 45;
-$cloudy = true;
+$grade = "G";
 
-if($temprature > 0 && $temprature < 30){
-    echo "Temp is good";
-} else {
-    echo "Temp is not good";
-}
 
-echo "<br><br>";
-
-if(!$cloudy){
-    echo "Temp is good it's cloudy";
-} else {
-    echo "Temp is not good, it's not cloudy";
+switch ($grade) {
+    case "A":
+        echo "You did good";
+        break;
+    case "B":
+        echo "You are very good";
+        break;
+    case "C":
+        echo "You did Average";
+        break;
+    case "D":
+        echo "You are failed";
+        break;
+    default:
+        echo "$grade grade is undefined";
 }
