@@ -34,6 +34,6 @@ foreach ($students as $key => $value) {
 
     foreach ($value as $k => $v) {
         echo "<br><br>";
-        echo $v . "<br>";
+        echo $k . ": " . $v . "<br>";
     }
 }
