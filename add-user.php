@@ -1,8 +1,6 @@
 <?php
 include("config/database.php");
 
-$_SESSION["name"] = "Hello Welcome";
-
 if (isset($_POST["submit"])) {
     extract($_POST);
     // echo '<pre>';
@@ -15,10 +13,12 @@ if (isset($_POST["submit"])) {
     $result = $conn->query($sql);
 
     if ($result) {
-        echo "User has been added successfully";
+        $_SESSION["success"] = "User has been added successfully";
     } else {
-        echo "Something went wrong while adding user please try again";
+        $_SESSION["error"] =  "Something went wrong while adding user please try again";
     }
+
+    header("LOCATION: users.php");
 }
 
 
@@ -30,6 +30,7 @@ if (isset($_POST["submit"])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/style.css" rel="stylesheet">
     <title>Add User</title>
 </head>
 

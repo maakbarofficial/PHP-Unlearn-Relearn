@@ -4,7 +4,8 @@ include("config/database.php");
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
 
-echo $_SESSION["name"];
+// echo $_SESSION["success"];
+unset($_SESSION["success"]);
 ?>
 
 <!DOCTYPE html>
