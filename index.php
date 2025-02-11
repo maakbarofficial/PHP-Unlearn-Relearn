@@ -2,18 +2,15 @@
 
 include("config/database.php");
 
-$sql = "SELECT * FROM users";
+$sql = "UPDATE users SET username='Ali' where id=2";
 
 $result = $conn->query($sql);
 
 echo "<pre>";
-print_r($result);
+// print_r($result);
 
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<pre>";
-        print_r($row);
-    }
+if ($result) {
+    echo "Updated successfully";
 } else {
     echo "Something went wrong";
 }
