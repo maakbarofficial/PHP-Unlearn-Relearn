@@ -2,13 +2,18 @@
 
 include("config/database.php");
 
-$date = date("Y-m-d H:i:s");
-$sql = "INSERT into users (username, password, created_at) values ('Wasim', 'Pass123', '$date')";
+$sql = "SELECT * FROM users";
 
 $result = $conn->query($sql);
 
-if ($result) {
-    echo "New record created";
+echo "<pre>";
+print_r($result);
+
+if ($result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        echo "<pre>";
+        print_r($row);
+    }
 } else {
-    echo "Something went wrong error :" . $conn->error;
+    echo "Something went wrong";
 }
