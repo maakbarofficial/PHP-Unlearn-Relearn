@@ -1,21 +1,33 @@
 <?php
 
-// Function
-function myFun()
-{
-    echo "Welcome from my fun <br>";
+// The empty() function checks whether a variable is empty or not.
+// This function returns false if the variable exists and is not empty, otherwise it returns true.
+// The following values evaluates to empty:
+// 0
+// 0.0
+// "0"
+// ""
+// NULL
+// FALSE
+// array()
+
+// The isset() function checks whether a variable is set, which means that it has to be declared and is not NULL.
+// This function returns true if the variable exists and is not NULL, otherwise it returns false.
+// Note: If multiple variables are supplied, then this function will return true only if all of the variables are set.
+// Tip: A variable can be unset with the unset() function.
+
+$name = null;
+
+if (isset($name)) {
+    echo "Name is SET";
+} else {
+    echo "Name is not SET";
 }
 
-myFun();
+echo "<br><br>";
 
-
-function sum($a, $op, $b)
-{
-    if ($op == "+") {
-        return "<h1>" . $a + $b . "</h1><br>";
-    } else if ($op == "-") {
-        return "<h1>" . $a - $b . "</h1><br>";
-    }
+if (empty($name)) {
+    echo "Name is SET";
+} else {
+    echo "Name is not SET";
 }
-
-echo (sum(2, "-", 5));
