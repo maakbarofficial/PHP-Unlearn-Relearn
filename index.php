@@ -2,7 +2,7 @@
 
 include("config/database.php");
 
-$sql = "UPDATE users SET username='Ali' where id=2";
+$sql = "DELETE FROM users where id=2";
 
 $result = $conn->query($sql);
 
@@ -10,7 +10,7 @@ echo "<pre>";
 // print_r($result);
 
 if ($result) {
-    echo "Updated successfully";
+    echo "Deleted successfully";
 } else {
     echo "Something went wrong";
 }
