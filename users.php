@@ -3,9 +3,6 @@ include("config/database.php");
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
-
-// echo $_SESSION["success"];
-unset($_SESSION["success"]);
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +17,7 @@ unset($_SESSION["success"]);
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
 
     <h2 style="color: #333;">All Users</h2>
+    <?php include("include/alert.php"); ?>
 
     <table style="width: 80%; margin: 0 auto; border-collapse: collapse; border: 1px solid #ccc;">
         <tr style="background-color: #f2f2f2;">

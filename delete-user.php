@@ -6,10 +6,11 @@ if (isset($_GET['id'])) {
     $sql = "DELETE FROM users WHERE id=" . $id;
     $result = $conn->query($sql);
     if ($result) {
-        echo "User deleted successfully";
-        echo "<script>window.location.href = 'users.php';</script>";
+        $_SESSION["success"] = "User deleted successfully";
     }
 } else {
-    echo "<h1>Invalid request</h1>";
+    $_SESSION["error"] =  "<h1>Invalid request</h1>";
     exit;
 }
+
+header("LOCATION: users.php");

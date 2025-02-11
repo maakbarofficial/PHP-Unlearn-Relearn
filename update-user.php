@@ -24,11 +24,12 @@ if (isset($_POST["submit"])) {
     $result = $conn->query($sql);
 
     if ($result) {
-        echo "User has been updated successfully";
-        echo "<script>window.location.href = 'users.php';</script>";
+        $_SESSION["success"] = "User has been updated successfully";
     } else {
-        echo "Something went wrong while updating user please try again";
+        $_SESSION["error"] =  "Something went wrong while updating user please try again";
     }
+
+    header("LOCATION: users.php");
 }
 ?>
 

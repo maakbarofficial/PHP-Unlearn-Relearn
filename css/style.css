@@ -13,3 +13,9 @@ a:hover {
 a:active {
   text-decoration: none;
 }
+
+.alert {
+  padding: 20px;
+  background-color: #f44336;
+  color: white;
+}
