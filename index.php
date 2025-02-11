@@ -1,37 +1,14 @@
 <?php
 
-// Database Connection
-// MySQLi - works with MySQL
-// PDO (PHP Data Object) - works with 12 different databases
+include("config/database.php");
 
+$date = date("Y-m-d H:i:s");
+$sql = "INSERT into users (username, password, created_at) values ('Wasim', 'Pass123', '$date')";
 
-// OOP Way
-$server = "localhost";
-$username = "root";
-$password = "root";
-$db = "testdbb";
+$result = $conn->query($sql);
 
-// //Create Connection
-// $conn = new mysqli($server, $username, $password, $db);
-
-// if ($conn->connect_error) {
-//     die("Connection failed: " . $conn->connect_error);
-//     exit;
-// }
-
-// echo "Connection Successfully";
-
-// Procedural Way
-
-
-//Create Connection
-$conn = @mysqli_connect($server, $username, $password, $db);
-
-// echo "<pre>";
-// print_r($conn);
-
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+if ($result) {
+    echo "New record created";
 } else {
-    echo "<h1>Connection Successfully</h1>";
+    echo "Something went wrong error :" . $conn->error;
 }
