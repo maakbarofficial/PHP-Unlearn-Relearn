@@ -21,7 +21,7 @@ if (isset($_POST["submit"])) {
 }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -31,18 +31,25 @@ if (isset($_POST["submit"])) {
     <title>Login Form</title>
 </head>
 
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
-    <?php include("include/alert.php") ?>
-    <h2 style="color: #333;">Login User</h2>
-    <form style="display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px;" method="post">
-        <label for="username  " style="display: block; margin-bottom: 5px;">Username:</label>
-        <input type="text" id="username" name="username" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;"> -->
+$pageTitle
+<?php
+$pageTitle = "Login Form";
+include("header.php");
+?>
+<?php include("include/alert.php") ?>
+<h2 style="color: #333;">Login User</h2>
+<form style="display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px;" method="post">
+    <label for="username  " style="display: block; margin-bottom: 5px;">Username:</label>
+    <input type="text" id="username" name="username" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
 
-        <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
-        <input type="password" id="password" name="password" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
+    <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
+    <input type="password" id="password" name="password" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
 
-        <button type="submit" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;" name="submit">Login</button>
-    </form>
+    <button type="submit" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;" name="submit">Login</button>
+</form>
 </body>
 
 </html>
+
+<?php include("OOP.php") ?>
