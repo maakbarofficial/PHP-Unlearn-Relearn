@@ -7,4 +7,4 @@
     <title><?php echo isset($pageTitle) ? $pageTitle : "User App"; ?></title>
 </head>
 
-<body>
+<body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
