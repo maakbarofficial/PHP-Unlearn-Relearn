@@ -1,5 +1,6 @@
 <?php
 include("config/database.php");
+include("middleware.php");
 
 $sql = "SELECT * FROM users";
 $result = $conn->query($sql);
@@ -15,7 +16,6 @@ $result = $conn->query($sql);
 </head>
 
 <body style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
-
     <h2 style="color: #333;">All Users</h2>
     <?php include("include/alert.php"); ?>
 
@@ -45,6 +45,9 @@ $result = $conn->query($sql);
     <br>
 
     <button style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;"><a href="add-user.php">Add User</a></button>
+
+    <button style="padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;"><a href="logout.php">Logout</a></button>
+
 
 </body>
 

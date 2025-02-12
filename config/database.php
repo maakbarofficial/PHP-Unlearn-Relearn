@@ -5,11 +5,8 @@ $username = "root";
 $password = "root";
 $db = "testdb";
 
-$conn = @new mysqli($server, $username, $password, $db);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
-// else {
-//     echo "Connected Successfully";
-// }
+try {
+    $conn = @new mysqli($server, $username, $password, $db);
+} catch (mysqli_sql_exception $e) {
+    echo "Connection failed: " . $e->getMessage();
+}

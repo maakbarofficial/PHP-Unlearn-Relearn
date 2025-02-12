@@ -1,5 +1,6 @@
 <?php
 include("config/database.php");
+include("middleware.php");
 
 if (isset($_POST["submit"])) {
     extract($_POST);
@@ -9,7 +10,8 @@ if (isset($_POST["submit"])) {
     // echo $_POST["username"];
     // exit;
     $date = date("Y-m-d H:i:s");
-    $sql = "INSERT INTO users (username, password, created_at) VALUES ('$username', '$password', '$date')";
+    $md5Password = md5($password);
+    $sql = "INSERT INTO users (username, password, created_at) VALUES ('$username', '$md5Password', '$date')";
     $result = $conn->query($sql);
 
     if ($result) {

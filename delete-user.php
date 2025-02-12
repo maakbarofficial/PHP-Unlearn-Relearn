@@ -1,5 +1,6 @@
 <?php
 include("config/database.php");
+include("middleware.php");
 
 if (isset($_GET['id'])) {
     extract($_GET);

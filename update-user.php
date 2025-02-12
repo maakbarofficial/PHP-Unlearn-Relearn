@@ -1,5 +1,6 @@
 <?php
 include("config/database.php");
+include("middleware.php");
 
 if (isset($_GET['id'])) {
     $sql = "SELECT * FROM users WHERE id=" . $_GET['id'];
@@ -20,7 +21,8 @@ if (isset($_POST["submit"])) {
     // echo $_POST["username"];
     // exit;
     $date = date("Y-m-d H:i:s");
-    $sql = "UPDATE users SET username = '$username', password='$password' WHERE id=" . $_GET['id'];
+    // $sql = "UPDATE users SET username = '$username', password='$password' WHERE id=" . $_GET['id'];
+    $sql = "UPDATE users SET username = '$username' WHERE id=" . $_GET['id'];
     $result = $conn->query($sql);
 
     if ($result) {
@@ -49,10 +51,12 @@ if (isset($_POST["submit"])) {
     <form style="display: inline-block; text-align: left; padding: 20px; border: 1px solid #ccc; border-radius: 10px;" action="update-user.php?id=<?php echo $user['id'] ?>" method="post">
         <label for="username" style="display: block; margin-bottom: 5px;">Username:</label>
         <input type="text" id="username" name="username" value="<?php echo $user['username'] ?>" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
-
+        <?php
+        /*
         <label for="password" style="display: block; margin-bottom: 5px;">Password:</label>
         <input type="text" id="password" name="password" value="<?php echo $user['password'] ?>" style="width: 100%; padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 5px;">
-
+        */
+        ?>
         <button type="submit" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;" name="submit">Update User</button>
     </form>
 
